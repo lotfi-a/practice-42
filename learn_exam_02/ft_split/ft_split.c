@@ -6,10 +6,11 @@
 /*   By: laanikid <laanikid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:55:56 by laanikid          #+#    #+#             */
-/*   Updated: 2025/01/30 18:24:45 by laanikid         ###   ########.fr       */
+/*   Updated: 2025/02/02 12:07:03 by laanikid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 
 int	ft_strlen(char *str)
@@ -34,7 +35,7 @@ int	charset_str_len(char *str, char *charset)
 		j = 0;
 		while (str[j])
 		{
-			if(charset[i] == str[j])
+			if (charset[i] == str[j])
 				count++;
 			j++;
 		}
@@ -43,7 +44,6 @@ int	charset_str_len(char *str, char *charset)
 	return (count++);
 }
 
-#include <stdio.h>
 void	ft_split(char *str, char *charset)
 {
 	int	i;
@@ -54,9 +54,11 @@ void	ft_split(char *str, char *charset)
 	charset_l = charset_str_len(str, charset);
 	printf("%d", charset_l);
 }
-int	main()
+
+int	main(void)
 {
-	char str[] = "lotfii";
-	char charset[] = "io";
+	char	str[] = "lotfii";
+	char	charset[] = "io";
+
 	ft_split(str, charset);
 }

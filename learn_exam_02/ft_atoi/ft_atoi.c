@@ -6,7 +6,7 @@
 /*   By: laanikid <laanikid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 12:09:02 by laanikid          #+#    #+#             */
-/*   Updated: 2025/01/30 13:20:12 by laanikid         ###   ########.fr       */
+/*   Updated: 2025/02/02 12:06:30 by laanikid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_atoi(const char *str)
 	n = -1;
 	while (str[i])
 	{
-		if(str[i] >= 9 && str[i] <= 13 || str[i] == 32)
+		if (str[i] >= 9 && str[i] <= 13 || str[i] == 32)
 			i++;
 	}
 	while (str[i] == '+' || str[i] == '-')
@@ -31,7 +31,7 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res = res * 10 + (str[i] - '0');		
+		res = res * 10 + (str[i] - '0');
 	}
 	return (res);
 }

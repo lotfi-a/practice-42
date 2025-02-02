@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fizz_buzz.c                                     :+:      :+:    :+:   */
+/*   count_words.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laanikid <laanikid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 12:03:51 by laanikid          #+#    #+#             */
-/*   Updated: 2025/02/02 12:05:35 by laanikid         ###   ########.fr       */
+/*   Created: 2025/02/02 11:55:28 by laanikid          #+#    #+#             */
+/*   Updated: 2025/02/02 12:02:30 by laanikid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,32 @@
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
+}
+
+int	count_words(char *str)
+{
+	int	i;
+	int	j;
+	int	c;
+
+	i = 0;
+	j = 0;
+	c = 0;
+	while (str[i])
+	{
+		while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+			i++;
+		j = 0;
+		while ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A'
+				&& str[i] <= 'Z'))
+		{
+			if (j == 0)
+				c++;
+			j++;
+			i++;
+		}
+	}
+	return (c);
 }
 
 void	ft_putnbr(int nb)
@@ -30,24 +56,15 @@ void	ft_putnbr(int nb)
 	if (n >= 10)
 		ft_putnbr(n / 10);
 	ft_putchar(n % 10 + '0');
-	ft_putchar('\n');
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	int	i;
-
-	i = 1;
-	while (i <= 100)
+	if (ac != 2)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
-			write(1, "fizzbuzz\n", 9);
-		else if (i % 5 == 0)
-			write(1, "buzz\n", 5);
-		else if (i % 3 == 0)
-			write(1, "fizz\n", 5);
-		else
-			ft_putnbr(i);
-		i++;
+		ft_putchar('\n');
+		return (2);
 	}
+	ft_putnbr(count_words(av[1]));
+	return (0);
 }

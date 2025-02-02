@@ -6,11 +6,10 @@
 /*   By: laanikid <laanikid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 12:08:02 by laanikid          #+#    #+#             */
-/*   Updated: 2025/01/30 13:44:58 by laanikid         ###   ########.fr       */
+/*   Updated: 2025/02/02 12:06:35 by laanikid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-
 }

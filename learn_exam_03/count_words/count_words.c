@@ -6,7 +6,7 @@
 /*   By: laanikid <laanikid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 11:55:28 by laanikid          #+#    #+#             */
-/*   Updated: 2025/02/02 12:02:30 by laanikid         ###   ########.fr       */
+/*   Updated: 2025/02/02 13:45:28 by laanikid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ int	count_words(char *str)
 		while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 			i++;
 		j = 0;
-		while ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A'
-				&& str[i] <= 'Z'))
+		while (str[i] != 32 && str[i] && !(str[i] >= 9 && str[i] <= 13))
 		{
 			if (j == 0)
 				c++;
